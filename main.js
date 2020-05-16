@@ -23,9 +23,7 @@ rollDice.addEventListener('click', function(){
        }else {
            let universalRandom = Math.floor(Math.random() * diceSides.value);
         dieRolls.push("&#x268" + universalRandom  + ";");
-        console.log(dieRolls);
         universal.push(universalRandom + 1);
-        console.log(universal);
         let elseTotal = universal.reduce((v, i) => (v + i));
         total.innerHTML = elseTotal;
        }
@@ -66,5 +64,5 @@ reset.addEventListener('click', function(){
    diceNumber.value = null;
    diceSides.value = 6;
    diceNumber.value = 6;
-   diceNumber.focus();
+   diceSides.focus();
 })
