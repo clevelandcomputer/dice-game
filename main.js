@@ -9,6 +9,7 @@ const diceSides = document.querySelector('#dice-sides');
 let dieRolls = [];
 let universal = [];
 diceSides.value = 6;
+diceNumber.value = 6;
 
 rollDice.addEventListener('click', function(){
     let numberOfDice = diceNumber.value;
@@ -18,7 +19,7 @@ rollDice.addEventListener('click', function(){
         let rolledDice = Math.floor( Math.random() * diceSides.value) + 1;
         dieRolls.push(rolledDice);
         let sumTotal = dieRolls.reduce((v, i) => (v + i));
-    total.innerHTML = sumTotal;
+        total.innerHTML = sumTotal;
        }else {
            let universalRandom = Math.floor(Math.random() * diceSides.value);
         dieRolls.push("&#x268" + universalRandom  + ";");
@@ -34,6 +35,12 @@ rollDice.addEventListener('click', function(){
 })
 
 showAll.addEventListener('click', function(){
+    if (total.innerHTML === ""){
+        rollDice.click();
+        showAll.click();
+    }else {
+
+    
     let counter = 0;
     while (counter < dieRolls.length) {
         let diceSplit = "";
@@ -44,13 +51,16 @@ showAll.addEventListener('click', function(){
         counter++
     }
     }
+    }
 })
 
 reset.addEventListener('click', function(){
    dieRolls = [];
-   total.innerText = '';
+   universal = [];
+   total.innerHTML = '';
    showRolls.innerHTML = '';
    diceNumber.value = null;
    diceSides.value = 6;
+   diceNumber.value = 6;
    diceNumber.focus();
 })
