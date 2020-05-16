@@ -1,0 +1,11 @@
+ol li {
+    float: left;
+    margin-left: 115px;
+    font-size: 100px;
+}
+
+#total {
+    /* line-height: 100px; */
+    font-size: 100px;
+    margin: 5px;
+}
