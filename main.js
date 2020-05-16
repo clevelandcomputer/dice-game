@@ -3,6 +3,7 @@ const rollDice = document.querySelector('#roll-dice');
 const total = document.querySelector('#total');
 const showAll = document.querySelector('#show-all');
 const showRolls = document.querySelector('#show-rolls');
+const reset = document.querySelector('#reset');
 
 
 
@@ -21,16 +22,16 @@ rollDice.addEventListener('click', function(){
     let sumTotal = dieRolls.reduce((v, i) => (v + i));
     console.log(sumTotal);
     total.innerText = sumTotal;
-    console.log(dieRolls)
+    console.log(dieRolls);
 
 })
 
-let counter = 0;
+
 
 
 
 showAll.addEventListener('click', function(){
-    
+    let counter = 0;
     
     while (counter < dieRolls.length) {
         let diceSplit = "";
@@ -43,7 +44,20 @@ showAll.addEventListener('click', function(){
         counter++
     }
     }
-    // showRolls.innerHTML = 
+    // dieRolls = [];
+    
+    
+})
+
+reset.addEventListener('click', function(){
+    
+    
+   dieRolls = [];
+   total.innerText = '';
+   showRolls.innerText = '';
+   diceNumber.value = null;
+   diceNumber.focus();
+
     
     
 })
