@@ -39,16 +39,20 @@ showAll.addEventListener('click', function(){
         rollDice.click();
         showAll.click();
     }else {
-
-    
     let counter = 0;
     while (counter < dieRolls.length) {
         let diceSplit = "";
         for(i = 0; i < dieRolls.length; i++){
             diceSplit = dieRolls[i];
+            if (diceSides.value >= 7){
         const newListItem = '<li style="float: none;">' + diceSplit + '</li>';
         showRolls.innerHTML += newListItem;
         counter++
+        } else {
+            const newListItem = '<li style="float: left;">' + diceSplit + '</li>';
+        showRolls.innerHTML += newListItem;
+        counter++
+        }
     }
     }
     }
