@@ -27,9 +27,11 @@ rollDice.addEventListener('click', function(){
         let elseTotal = universal.reduce((v, i) => (v + i));
         total.innerHTML = elseTotal;
        }
+       console.log(dieRolls);
+       
         loopCount++
     }
-    
+    rollDice.disabled = true;
 })
 
 showAll.addEventListener('click', function(){
@@ -54,6 +56,7 @@ showAll.addEventListener('click', function(){
     }
     }
     }
+    showAll.disabled = true;
 })
 
 reset.addEventListener('click', function(){
@@ -65,4 +68,6 @@ reset.addEventListener('click', function(){
    diceSides.value = 6;
    diceNumber.value = 6;
    diceSides.focus();
+   rollDice.disabled = false;
+   showAll.disabled = false;
 })
